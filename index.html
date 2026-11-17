@@ -1,547 +1,61 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>数字集成电路设计 · 精讲讲义</title><style>
+<title>课程精讲讲义</title><style>
 *{box-sizing:border-box}
-body{margin:0;background:#f4f6fa;color:#1b1b1f;
+body{margin:0;background:#f3f5f9;color:#1b1b1f;
  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
- "Microsoft YaHei",sans-serif;line-height:1.8}
-.wrap{max-width:1100px;margin:0 auto;padding:56px 24px 80px}
-h1{font-size:34px;color:#12355b;margin:0 0 6px;font-weight:800}
-.sub{color:#6b7280;margin:0 0 34px;font-size:15px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
-a.card{display:block;background:#fff;border:1px solid #e3e7ee;border-radius:14px;
- padding:22px 22px 18px;text-decoration:none;color:inherit;
- box-shadow:0 1px 2px rgba(16,24,40,.04);transition:.16s}
-a.card:hover{transform:translateY(-2px);box-shadow:0 12px 28px -14px rgba(16,24,40,.35);
- border-color:#c9d8ea}
-.num{font-size:13px;font-weight:700;color:#1f5fa8;letter-spacing:.12em}
-.t{font-size:21px;font-weight:800;color:#12355b;margin:2px 0 6px}
-.d{font-size:13.5px;color:#5a6472}
-.meta{font-size:12px;color:#8a94a6;margin-top:10px}
-.tag{display:inline-block;background:#e9f0fa;color:#1f5fa8;border-radius:999px;
- padding:1px 9px;font-size:11.5px;margin-left:6px}
-footer{margin-top:40px;font-size:12.5px;color:#8a94a6}
+ "Microsoft YaHei",sans-serif;line-height:1.75}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:54px 24px 84px}
+.kicker{font-size:12.5px;letter-spacing:.2em;color:#6b7280;font-weight:700;
+ text-transform:uppercase}
+h1{font-size:38px;line-height:1.25;margin:6px 0 10px;color:#12355b;font-weight:800}
+.lead{color:#5a6472;font-size:15.5px;margin:0 0 34px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.card{display:flex;flex-direction:column;background:#fff;border:1px solid #e3e7ee;
+ border-radius:16px;padding:22px 22px 18px;text-decoration:none;color:inherit;
+ box-shadow:0 1px 2px rgba(16,24,40,.04);transition:.18s;position:relative;
+ overflow:hidden}
+.card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+ background:var(--c,#1f5fa8)}
+.card:hover{transform:translateY(-3px);border-color:#c9d8ea;
+ box-shadow:0 18px 38px -18px rgba(16,24,40,.4)}
+.card .top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.card .name{font-size:20px;font-weight:800;color:#12355b}
+.card .badge{flex:none;font-size:12px;font-weight:700;color:#fff;background:var(--c,#1f5fa8);
+ border-radius:999px;padding:2px 10px}
+.card .desc{font-size:13.5px;color:#5a6472;margin:8px 0 14px;flex:1}
+.card .meta{font-size:12px;color:#8a94a6;display:flex;justify-content:space-between;
+ align-items:center;border-top:1px dashed #e8edf4;padding-top:10px}
+.card .go{color:var(--c,#1f5fa8);font-weight:700}
+.home{display:inline-block;margin-bottom:18px;font-size:13.5px;color:#1f5fa8;
+ text-decoration:none;font-weight:600}
+.home:hover{text-decoration:underline}
+footer{margin-top:42px;font-size:12.5px;color:#8a94a6;line-height:1.8}
+@media(max-width:560px){h1{font-size:28px}.wrap{padding:34px 16px 60px}}
 </style></head>
 <body><div class="wrap">
-<h1>数字集成电路设计 · 精讲讲义</h1>
-<p class="sub">按章节整理的零基础讲义：逐页提炼 PPT、补齐推导、统一排版。
-点开任意一章即可阅读；每份都是单文件，可离线、可打印。</p>
+<div class="kicker">MY LESSON</div>
+<h1>课程精讲讲义</h1>
+<p class="lead">三门课的课堂笔记：逐页提炼课件、补齐推导、统一排版。每章都是单文件 HTML，
+可离线阅读、可打印；页内支持关键字搜索与文字高亮标注。</p>
 <div class="grid">
-<a class="card" href="数字集成电路设计_第3章_MOS器件_精讲讲义.html">
-      <div class="num">第 3 章</div>
-      <div class="t">MOS 器件</div>
-      <div class="d">结构 · 阈值 · I–V · 电容 · 非理想效应</div>
-      <div class="meta">单文件 HTML · 817 KB · 可离线阅读/打印</div></a><a class="card" href="数字集成电路设计_第4章_互连线_精讲讲义.html">
-      <div class="num">第 4 章</div>
-      <div class="t">互连线</div>
-      <div class="d">平板/边缘电容 · 方块电阻 · Elmore · 中继器</div>
-      <div class="meta">单文件 HTML · 1268 KB · 可离线阅读/打印</div></a><a class="card" href="数字集成电路设计_第5章_CMOS反相器_精讲讲义.html">
-      <div class="num">第 5 章</div>
-      <div class="t">CMOS 反相器</div>
-      <div class="d">VTC · 噪声容限 · 延迟 · 功耗 · 尺寸设计</div>
-      <div class="meta">单文件 HTML · 340 KB · 可离线阅读/打印</div></a><a class="card" href="数字集成电路设计_第6章_组合逻辑门_精讲讲义.html">
-      <div class="num">第 6 章</div>
-      <div class="t">组合逻辑门</div>
-      <div class="d">互补 CMOS · 有比逻辑 · 动态逻辑 · 传输门</div>
-      <div class="meta">单文件 HTML · 275 KB · 可离线阅读/打印</div></a><a class="card" href="数字集成电路设计_第7章_时序逻辑门_精讲讲义.html">
-      <div class="num">第 7 章</div>
-      <div class="t">时序逻辑门</div>
-      <div class="d">锁存器 · 触发器 · 建立/保持 · 时钟</div>
-      <div class="meta">单文件 HTML · 255 KB · 可离线阅读/打印</div></a><a class="card" href="数字集成电路设计_第10章_时序课题_精讲讲义.html">
-      <div class="num">第 10 章</div>
-      <div class="t">时序课题</div>
-      <div class="d">建立/保持约束 · 关键路径 · 流水线 · STA · 亚稳态 · 时钟树/PLL</div>
-      <div class="meta">单文件 HTML · 145 KB · 可离线阅读/打印</div></a><a class="card" href="数字集成电路设计_第11章_算术运算单元_精讲讲义.html">
-      <div class="num">第 11 章</div>
-      <div class="t">算术运算单元</div>
-      <div class="d">全加器 · 超前进位树 · 乘法器 · 移位器</div>
-      <div class="meta">单文件 HTML · 289 KB · 可离线阅读/打印</div></a><a class="card" href="数字集成电路设计_第12章_存储器_精讲讲义.html">
-      <div class="num">第 12 章</div>
-      <div class="t">存储器</div>
-      <div class="d">SRAM · DRAM · ROM · 灵敏放大器 · 冗余与 ECC</div>
-      <div class="meta">单文件 HTML · 207 KB · 可离线阅读/打印</div></a>
+<a class="card" href="signals-systems/index.html" style="--c:#1f5fa8">
+      <div class="top"><span class="name">信号与系统</span>
+        <span class="badge">2 章</span></div>
+      <div class="desc">把世界抽象成 f(t)，把系统抽象成 h(t)：卷积、变换与频域分析</div>
+      <div class="meta"><span>第 1–2 章</span>
+        <span class="go">进入课程 →</span></div></a><a class="card" href="semiconductor-physics/index.html" style="--c:#0e6e6e">
+      <div class="top"><span class="name">半导体器件物理</span>
+        <span class="badge">4 章</span></div>
+      <div class="desc">从能带与载流子到 PN 结、二极管、肖特基接触</div>
+      <div class="meta"><span>第 1–4 章</span>
+        <span class="go">进入课程 →</span></div></a><a class="card" href="digital-ic/index.html" style="--c:#7b3fa0">
+      <div class="top"><span class="name">数字集成电路设计</span>
+        <span class="badge">8 章</span></div>
+      <div class="desc">从 MOS 器件到反相器、组合/时序逻辑、时序课题与存储器</div>
+      <div class="meta"><span>第 3–12 章</span>
+        <span class="go">进入课程 →</span></div></a>
 </div>
-<footer>第 3—7 章基于课堂 PPT 整理，参考《CMOS 数字集成电路设计》（Hawkins 等）；
-数值例题统一使用 PPT 的 0.25 μm 工艺参数。</footer>
-</div>
-<style id="fx-tools-style">
-/* 阅读工具样式：搜索 / 标注 / 工具按钮组 */
-.fx-tools{position:fixed;right:26px;bottom:26px;z-index:70;display:flex;
-  flex-direction:column;gap:10px;align-items:center}
-.fx-tools .fx-btn,.fx-tools #top{width:46px;height:46px;border-radius:50%;
-  border:1px solid #e3e7ee;background:#fff;color:#1f5fa8;font-size:18px;
-  line-height:1;cursor:pointer;padding:0;display:flex;align-items:center;
-  justify-content:center;box-shadow:0 6px 20px -6px rgba(16,24,40,.3);
-  transition:transform .15s,border-color .15s,box-shadow .15s}
-.fx-tools .fx-btn:hover{transform:translateY(-2px);border-color:#c9d8ea}
-.fx-tools .fx-btn.on{background:#fff3bf;border-color:#e0a93b;
-  box-shadow:0 0 0 3px rgba(224,169,59,.25),0 6px 20px -6px rgba(16,24,40,.3)}
-.fx-tools #top{position:static!important;display:flex!important;margin:0!important;
-  right:auto!important;bottom:auto!important}
-
-.fx-panel{position:fixed;right:26px;bottom:210px;z-index:71;background:#fff;
-  border:1px solid #e3e7ee;border-radius:14px;padding:12px;width:326px;
-  max-width:calc(100vw - 40px);box-shadow:0 18px 44px -14px rgba(16,24,40,.38);
-  font-size:14px;color:#1b1b1f;line-height:1.6}
-.fx-panel[hidden]{display:none!important}
-.fx-row{display:flex;gap:8px;align-items:center}
-.fx-panel input{flex:1;min-width:0;border:1px solid #cfd8e3;border-radius:9px;
-  padding:8px 10px;font-size:14px;outline:none;background:#fff;color:inherit}
-.fx-panel input:focus{border-color:#1f5fa8;box-shadow:0 0 0 3px rgba(31,95,168,.15)}
-.fx-mini{border:1px solid #cfd8e3;background:#f7f9fc;border-radius:8px;
-  padding:6px 10px;font-size:13px;cursor:pointer;white-space:nowrap;
-  color:#26313f;font-family:inherit}
-.fx-mini:hover{background:#eef3fa;border-color:#a9c0dc}
-.fx-bar{display:flex;gap:8px;align-items:center;margin-top:8px;
-  justify-content:space-between;flex-wrap:wrap}
-.fx-count{font-size:12.5px;color:#6b7280;font-variant-numeric:tabular-nums;
-  margin-top:8px;letter-spacing:.02em}
-.fx-hint{margin-top:6px;font-size:12px;color:#8a94a6;line-height:1.55}
-
-.fx-mark{background:#ffd54f;border-radius:2px;box-shadow:0 0 0 1px #f0b429 inset}
-.fx-mark.cur{background:#ff8f00;color:#fff;box-shadow:0 0 0 1px #e65100 inset}
-.fx-hl{background:#ffe680;border-radius:2px;
-  box-shadow:0 0 0 1px rgba(224,169,59,.45) inset}
-
-.fx-toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,12px);
-  background:rgba(23,32,45,.94);color:#fff;font-size:13.5px;padding:8px 16px;
-  border-radius:999px;opacity:0;pointer-events:none;transition:.18s;z-index:80;
-  max-width:80vw;text-align:center}
-.fx-toast.show{opacity:1;transform:translate(-50%,0)}
-
-@media print{
-  .fx-tools,.fx-panel,.fx-toast{display:none!important}
-  .fx-hl{background:#ffe680!important;-webkit-print-color-adjust:exact;
-    print-color-adjust:exact}
-}
-@media(max-width:520px){
-  .fx-tools{right:16px;bottom:16px}
-  .fx-panel{right:16px;bottom:200px;width:calc(100vw - 32px)}
-}
-
-</style>
-<script id="fx-tools-script">
-/* 讲义阅读辅助工具：关键字搜索 + 文字标注（本地保存） */
-(function () {
-  'use strict';
-  if (window.__fxTools) return;
-  window.__fxTools = 1;
-
-  var MAIN = document.querySelector('main') || document.querySelector('.wrap') || document.body;
-  var KEY = 'fx_ann:' + location.pathname;
-  var store = load();
-  var mode = null;          // null | 'hi' | 'er'
-  var marks = [];           // 搜索结果
-  var cur = -1;
-  var qDeb = null;
-
-  function load() {
-    try {
-      var v = JSON.parse(localStorage.getItem(KEY) || '[]');
-      return Array.isArray(v) ? v : [];
-    } catch (e) { return []; }
-  }
-  function save() {
-    try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) {}
-  }
-
-  /* ---------- 文本坐标：以 main 起始处的字符偏移为准 ---------- */
-  function walkText() {
-    var out = [], w = document.createTreeWalker(MAIN, NodeFilter.SHOW_TEXT, null, false), n;
-    while ((n = w.nextNode())) {
-      var p = n.parentNode;
-      if (!p || !n.nodeValue) continue;
-      if (p.closest && p.closest('script,style,.fx-panel,.fx-tools')) continue;
-      out.push(n);
-    }
-    return out;
-  }
-  function pointAt(off) {
-    var nodes = walkText(), pos = 0;
-    for (var i = 0; i < nodes.length; i++) {
-      var len = nodes[i].nodeValue.length;
-      if (off <= pos + len) return { node: nodes[i], offset: Math.max(0, off - pos) };
-      pos += len;
-    }
-    var last = nodes[nodes.length - 1];
-    return last ? { node: last, offset: last.nodeValue.length } : null;
-  }
-  function flatOfSel() {
-    var s = window.getSelection();
-    if (!s || s.rangeCount === 0 || s.isCollapsed) return null;
-    var r = s.getRangeAt(0);
-    if (!MAIN.contains(r.startContainer) || !MAIN.contains(r.endContainer)) return null;
-    if (!r.toString().trim()) return null;
-    var a = document.createRange();
-    a.setStart(MAIN, 0); a.setEnd(r.startContainer, r.startOffset);
-    var b = document.createRange();
-    b.setStart(MAIN, 0); b.setEnd(r.endContainer, r.endOffset);
-    var s0 = a.toString().length, e0 = b.toString().length;
-    return e0 > s0 ? [s0, e0] : null;
-  }
-
-  /* ---------- 包裹 / 解包 ---------- */
-  function wrapRange(s, e, cls) {
-    var nodes = walkText(), pos = 0, segs = [];
-    for (var i = 0; i < nodes.length; i++) {
-      var st = pos, en = pos + nodes[i].nodeValue.length;
-      var a = Math.max(s, st), b = Math.min(e, en);
-      if (a < b) segs.push({ node: nodes[i], a: a - st, b: b - st });
-      pos = en;
-    }
-    for (var k = segs.length - 1; k >= 0; k--) {
-      var sg = segs[k], node = sg.node;
-      if (!node.parentNode) continue;
-      if (sg.a > 0) node = node.splitText(sg.a);
-      if (sg.b - sg.a < node.nodeValue.length) node.splitText(sg.b - sg.a);
-      var sp = document.createElement('span');
-      sp.className = cls;
-      node.parentNode.insertBefore(sp, node);
-      sp.appendChild(node);
-    }
-  }
-  function unwrapEl(el2) {
-    var p = el2.parentNode;
-    if (!p) return;
-    while (el2.firstChild) p.insertBefore(el2.firstChild, el2);
-    p.removeChild(el2);
-  }
-  function unwrapAll(cls) {
-    var els = MAIN.querySelectorAll('.' + cls);
-    for (var i = els.length - 1; i >= 0; i--) unwrapEl(els[i]);
-    MAIN.normalize();
-  }
-
-  /* ---------- 标注渲染 ---------- */
-  function renderAnn() {
-    unwrapAll('fx-hl');
-    for (var i = store.length - 1; i >= 0; i--) {
-      var a = store[i];
-      if (a && a.length === 2 && a[1] > a[0]) wrapRange(a[0], a[1], 'fx-hl');
-    }
-    updAnnCount();
-  }
-
-  /* ---------- 搜索 ---------- */
-  function clearSearch() {
-    unwrapAll('fx-mark');
-    marks = []; cur = -1;
-    countEl.textContent = '0 / 0';
-  }
-  function doSearch(q) {
-    clearSearch();
-    if (!q) return;
-    var flat = MAIN.textContent, low = flat.toLowerCase(), nd = q.toLowerCase();
-    if (!nd) return;
-    var from = 0, hits = [];
-    while (hits.length < 800) {
-      var i = low.indexOf(nd, from);
-      if (i < 0) break;
-      hits.push(i);
-      from = i + Math.max(1, nd.length);
-    }
-    if (!hits.length) { countEl.textContent = '0 / 0'; return; }
-    for (var k = hits.length - 1; k >= 0; k--) wrapRange(hits[k], hits[k] + nd.length, 'fx-mark');
-    marks = [].slice.call(MAIN.querySelectorAll('.fx-mark'));
-    marks.sort(function (a, b) {
-      return (a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING) ? -1 : 1;
-    });
-    cur = -1;
-    go(0, true);
-  }
-  function go(i, instant) {
-    if (!marks.length) return;
-    cur = (i + marks.length) % marks.length;
-    for (var k = 0; k < marks.length; k++) marks[k].classList.remove('cur');
-    var m = marks[cur];
-    m.classList.add('cur');
-    try { m.scrollIntoView({ block: 'center', behavior: instant ? 'auto' : 'smooth' }); }
-    catch (e) { m.scrollIntoView(); }
-    countEl.textContent = (cur + 1) + ' / ' + marks.length;
-  }
-
-  /* ---------- 标注应用 ---------- */
-  function applySel() {
-    if (!mode) return;
-    try { applySelInner(); } catch (e) { toast('标注失败：' + (e && e.message ? e.message : e)); }
-  }
-  function applySelInner() {
-    var r = flatOfSel();
-    if (!r) return;
-    var s = r[0], e = r[1];
-    if (mode === 'hi') {
-      store = store.filter(function (a) { return a[1] <= s || a[0] >= e; });
-      store.push([s, e]);
-      save(); renderAnn();
-      toast('已高亮');
-    } else {
-      var before = store.length;
-      store = store.filter(function (a) { return a[1] <= s || a[0] >= e; });
-      if (store.length < before) {
-        save(); renderAnn();
-        toast('已擦除 ' + (before - store.length) + ' 处');
-      } else { toast('这里没有标注'); }
-    }
-    var sel = window.getSelection();
-    if (sel) sel.removeAllRanges();
-  }
-
-  /* ---------- 导出 / 导入 ---------- */
-  function curFile() {
-    var n = location.pathname.split('/').pop() || 'notes';
-    try { n = decodeURIComponent(n); } catch (e) { }
-    return n;
-  }
-  function exportAnn() {
-    if (!store.length) { toast('还没有标注可导出'); return; }
-    var flat = MAIN.textContent;
-    var data = {
-      v: 1,
-      file: curFile(),
-      len: flat.length,
-      time: new Date().toISOString(),
-      anns: store.map(function (a) {
-        return [a[0], a[1], flat.slice(a[0], a[1]).slice(0, 120)];
-      })
-    };
-    var blob = new Blob([JSON.stringify(data, null, 1)], { type: 'application/json' });
-    var url = URL.createObjectURL(blob);
-    var a = document.createElement('a');
-    a.href = url;
-    a.download = '标注_' + curFile().replace(/\.html?$/i, '') + '.json';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
-    toast('已导出 ' + store.length + ' 处标注（JSON 文件）');
-  }
-  function importAnn(file) {
-    var fr = new FileReader();
-    fr.onload = function () {
-      var d;
-      try { d = JSON.parse(fr.result); } catch (e) { toast('导入失败：不是有效的 JSON'); return; }
-      var list = Array.isArray(d) ? d : (d && d.anns);
-      if (!Array.isArray(list)) { toast('导入失败：格式不正确'); return; }
-      if (d && d.file && d.file !== curFile()) {
-        if (!window.confirm('这份标注来自《' + d.file + '》，\n当前打开的是《' + curFile() + '》。\n仍要导入到当前章节吗？')) return;
-      }
-      var flat = MAIN.textContent, curLen = flat.length;
-      var srcLen = (d && typeof d.len === 'number') ? d.len : curLen;
-      var add = [], same = 0, moved = 0, skip = 0;
-      for (var i = 0; i < list.length; i++) {
-        var it = list[i];
-        if (!it) { skip++; continue; }
-        var s0 = it[0], e0 = it[1];
-        if (typeof s0 !== 'number' || typeof e0 !== 'number' || e0 <= s0) { skip++; continue; }
-        if (srcLen === curLen && e0 <= curLen) { add.push([s0, e0]); same++; continue; }
-        var snip = typeof it[2] === 'string' ? it[2] : '';
-        var placed = false;
-        if (snip.length >= 4) {
-          var win = 3000, from = Math.max(0, s0 - win), to = Math.min(curLen, e0 + win);
-          var seg = flat.slice(from, to), k = seg.indexOf(snip);
-          if (k >= 0 && seg.indexOf(snip, k + 1) < 0) {
-            add.push([from + k, from + k + (e0 - s0)]); moved++; placed = true;
-          }
-          if (!placed) {
-            var k2 = flat.indexOf(snip);
-            if (k2 >= 0 && flat.indexOf(snip, k2 + 1) < 0) {
-              add.push([k2, k2 + (e0 - s0)]); moved++; placed = true;
-            }
-          }
-        }
-        if (!placed) skip++;
-      }
-      for (var j = 0; j < add.length; j++) {
-        var a = add[j];
-        store = store.filter(function (b) { return b[1] <= a[0] || b[0] >= a[1]; });
-        store.push(a);
-      }
-      store.sort(function (a, b) { return a[0] - b[0]; });
-      save();
-      renderAnn();
-      toast('导入 ' + same + ' 处' + (moved ? '，重定位 ' + moved + ' 处' : '') + (skip ? '，跳过 ' + skip + ' 处' : '') + '（共 ' + store.length + ' 处）');
-    };
-    fr.readAsText(file);
-  }
-
-  /* ---------- UI ---------- */
-  function el(tag, cls, txt) {
-    var e = document.createElement(tag);
-    if (cls) e.className = cls;
-    if (txt != null) e.textContent = txt;
-    return e;
-  }
-  function mkBtn(txt, title) {
-    var b = el('button', 'fx-btn', txt);
-    b.type = 'button';
-    b.title = title;
-    return b;
-  }
-
-  var tools = el('div', 'fx-tools');
-  var btnS = mkBtn('🔍', '搜索关键字（Ctrl+F）');
-  var btnA = mkBtn('✏️', '标注');
-  tools.appendChild(btnS);
-  tools.appendChild(btnA);
-  var topBtn = document.getElementById('top');
-  if (topBtn) tools.appendChild(topBtn);
-  document.body.appendChild(tools);
-
-  /* 搜索面板 */
-  var sPanel = el('div', 'fx-panel');
-  sPanel.hidden = true;
-  var sRow = el('div', 'fx-row');
-  var input = document.createElement('input');
-  input.type = 'search';
-  input.placeholder = '输入关键字，回车跳到下一项';
-  var goBtn = el('button', 'fx-mini', '下一个');
-  goBtn.type = 'button';
-  sRow.appendChild(input); sRow.appendChild(goBtn);
-  var sBar = el('div', 'fx-bar');
-  var countEl = el('span', 'fx-count', '0 / 0');
-  var prevB = el('button', 'fx-mini', '↑ 上一项');
-  var nextB = el('button', 'fx-mini', '↓ 下一项');
-  var clrB = el('button', 'fx-mini', '清除');
-  prevB.type = nextB.type = clrB.type = 'button';
-  sBar.appendChild(countEl); sBar.appendChild(prevB); sBar.appendChild(nextB); sBar.appendChild(clrB);
-  sPanel.appendChild(sRow); sPanel.appendChild(sBar);
-  document.body.appendChild(sPanel);
-
-  /* 标注面板 */
-  var aPanel = el('div', 'fx-panel');
-  aPanel.hidden = true;
-  var aBar = el('div', 'fx-bar');
-  var hiB = el('button', 'fx-mini', '高亮');
-  var erB = el('button', 'fx-mini', '擦除');
-  var exB = el('button', 'fx-mini', '退出标注');
-  hiB.type = erB.type = exB.type = 'button';
-  aBar.appendChild(hiB); aBar.appendChild(erB); aBar.appendChild(exB);
-  var hint = el('div', 'fx-hint', '选“高亮”后，在正文里长按或拖动选中文字，即变黄标注；选“擦除”后选中已标注的文字即可去掉；再点 ✏️ 按钮退出标注模式。');
-  var annCount = el('div', 'fx-count', '');
-  var clearAll = el('button', 'fx-mini', '清除全部标注');
-  var expB = el('button', 'fx-mini', '导出标注');
-  var impB = el('button', 'fx-mini', '导入标注');
-  clearAll.type = expB.type = impB.type = 'button';
-  expB.title = '把本页标注存成 JSON 文件（可备份/换设备）';
-  impB.title = '从 JSON 文件恢复标注';
-  var ioBar = el('div', 'fx-bar');
-  ioBar.appendChild(expB); ioBar.appendChild(impB); ioBar.appendChild(clearAll);
-  var fileIn = document.createElement('input');
-  fileIn.type = 'file';
-  fileIn.accept = '.json,application/json';
-  fileIn.hidden = true;
-  aPanel.appendChild(aBar); aPanel.appendChild(annCount); aPanel.appendChild(hint);
-  aPanel.appendChild(ioBar); aPanel.appendChild(fileIn);
-  document.body.appendChild(aPanel);
-
-  var toastEl = el('div', 'fx-toast');
-  document.body.appendChild(toastEl);
-  var toastTimer = null;
-  function toast(msg) {
-    toastEl.textContent = msg;
-    toastEl.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () { toastEl.classList.remove('show'); }, 1600);
-  }
-  function updAnnCount() {
-    annCount.textContent = '已标注 ' + store.length + ' 处（保存在本机浏览器）';
-  }
-
-  function closePanels() { sPanel.hidden = true; aPanel.hidden = true; }
-  function setMode(m) {
-    mode = m;
-    btnA.classList.toggle('on', !!m);
-    closePanels();
-    if (m === 'hi') toast('标注模式：选中文字即变黄，再点 ✏️ 退出');
-    else if (m === 'er') toast('擦除模式：选中已标注文字即清除');
-    else toast('已退出标注模式');
-  }
-
-  btnS.addEventListener('click', function (e) {
-    e.stopPropagation();
-    var open = sPanel.hidden;
-    closePanels();
-    if (open) { sPanel.hidden = false; input.focus(); input.select(); }
-  });
-  btnA.addEventListener('click', function (e) {
-    e.stopPropagation();
-    if (mode) { setMode(null); return; }
-    var open = aPanel.hidden;
-    closePanels();
-    if (open) { aPanel.hidden = false; updAnnCount(); }
-  });
-  goBtn.addEventListener('click', function () { doSearch(input.value); });
-  nextB.addEventListener('click', function () { if (marks.length) go(cur + 1); });
-  prevB.addEventListener('click', function () { if (marks.length) go(cur - 1); });
-  clrB.addEventListener('click', function () { input.value = ''; clearSearch(); input.focus(); });
-  hiB.addEventListener('click', function () { setMode('hi'); });
-  erB.addEventListener('click', function () { setMode('er'); });
-  exB.addEventListener('click', function () { setMode(null); });
-  expB.addEventListener('click', exportAnn);
-  impB.addEventListener('click', function () { fileIn.value = ''; fileIn.click(); });
-  fileIn.addEventListener('change', function () {
-    if (fileIn.files && fileIn.files[0]) importAnn(fileIn.files[0]);
-  });
-  clearAll.addEventListener('click', function () {
-    if (!store.length) { toast('还没有标注'); return; }
-    if (window.confirm('确定清除全部 ' + store.length + ' 处标注？')) {
-      store = []; save(); renderAnn(); toast('已全部清除');
-    }
-  });
-  input.addEventListener('input', function () {
-    clearTimeout(qDeb);
-    qDeb = setTimeout(function () { doSearch(input.value); }, 220);
-  });
-  input.addEventListener('keydown', function (ev) {
-    if (ev.key === 'Enter') {
-      ev.preventDefault();
-      if (marks.length) { go(cur + (ev.shiftKey ? -1 : 1)); }
-      else { doSearch(input.value); }
-    } else if (ev.key === 'Escape') {
-      closePanels(); clearSearch();
-    }
-  });
-
-  document.addEventListener('keydown', function (ev) {
-    if ((ev.ctrlKey || ev.metaKey) && (ev.key === 'f' || ev.key === 'F')) {
-      ev.preventDefault();
-      closePanels();
-      sPanel.hidden = false;
-      input.focus(); input.select();
-    } else if (ev.key === 'Escape') {
-      closePanels();
-      if (mode) setMode(null);
-    }
-  });
-
-  /* 选中后应用（鼠标与触屏） */
-  document.addEventListener('mouseup', function (ev) {
-    if (!mode) return;
-    if (ev.target && ev.target.closest && ev.target.closest('.fx-panel,.fx-tools')) return;
-    setTimeout(applySel, 10);
-  });
-  document.addEventListener('touchend', function (ev) {
-    if (!mode) return;
-    if (ev.target && ev.target.closest && ev.target.closest('.fx-panel,.fx-tools')) return;
-    setTimeout(applySel, 350);   // 等系统长按选词完成
-  });
-  /* 点击面板外部关闭 */
-  document.addEventListener('click', function (ev) {
-    if (!ev.target.closest || ev.target.closest('.fx-panel,.fx-tools')) return;
-    closePanels();
-  });
-
-  /* 初始化（任何一步出错都不影响按钮可用） */
-  try { renderAnn(); } catch (e) { }
-  try { updAnnCount(); } catch (e) { }
-  try {
-    if (!localStorage.getItem(KEY + ':ok')) {
-      localStorage.setItem(KEY + ':ok', '1');
-    }
-  } catch (e) {
-    hint.textContent += ' 提示：当前浏览器不允许本地存储，标注只在本次会话有效。';
-  }
-})();
-
-</script>
-</body></html>
+<footer>共 14 章。内容依据课堂课件整理，如与课堂讲述不一致，以任课教师要求为准。</footer>
+</div></body></html>

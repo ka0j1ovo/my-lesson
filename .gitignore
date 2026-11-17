@@ -1,7 +1,8 @@
-﻿# 源文件不上传
+﻿# 源文件与构建目录不上传
 *.pdf
 *.docx
 _build/
+.dsh/
 .DS_Store
 Thumbs.db
 desktop.ini
